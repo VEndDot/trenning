@@ -1,0 +1,13 @@
+# Оптимизированный пузырек
+n = int(input())
+list_n = list(map(int, input().split()))
+count_step = 0
+
+
+for i in range(n):
+    for j in range(i):
+        if list_n[j] > list_n[i]:
+            count_step += 1 # Кол-во перестановок
+            list_n[j], list_n[i] = list_n[i], list_n[j]
+print(*list_n)
+print(count_step)
